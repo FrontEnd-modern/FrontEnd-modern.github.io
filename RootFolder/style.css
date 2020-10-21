@@ -1,0 +1,28 @@
+body{
+   height: 1000px;
+   background-color: rgb(223, 231, 245);
+}
+
+.block{
+   height: 100%;
+   display: flex;
+    justify-content: space-around;
+  align-items: center;
+
+}
+.title{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.mainTitle{
+
+    font-size: 42px;
+text-align: center;
+    width: 50%;
+    margin: 20px auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.mainTitle p{
+    font-size: 20px;
+}

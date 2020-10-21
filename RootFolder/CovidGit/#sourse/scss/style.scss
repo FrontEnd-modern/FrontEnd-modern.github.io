@@ -1,0 +1,570 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+//-------------------------------------------------------
+//-------------------------------------scss--------------------------------------
+$background: #f5f8fb;
+$textcolor: #324b72;
+$titlecolor: #112950;
+%blocksTitle36 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.617px;
+    color: $titlecolor;
+}
+%blocksTitle37 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 37px;
+    line-height: 44px;
+    letter-spacing: 0.617px;
+    color: $titlecolor;
+}
+
+@mixin text($fs, $lh, $fw, $col, $font) {
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: $fw;
+    color: $col;
+    font-family: $font;
+}
+%text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 30px;
+    letter-spacing: 0.15px;
+    color: $textcolor;
+}
+//-------------------------------------------------
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.container {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.header {
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+
+    .header__notification {
+        position: fixed;
+        width: 100%;
+        padding: 18px;
+        background: rgba(17, 41, 80, 1);
+        text-align: center;
+        @include text(16px, 24px, 400, #ffffff, "Inter");
+
+        & a {
+            @include text(16px, 24px, 400, #ffffff, "Inter");
+            & img {
+                position: relative;
+                top: 6px;
+                left: 5px;
+            }
+        }
+    }
+
+    .header__row {
+        .header__menu {
+            margin: 80px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .header__logo img {
+            }
+
+            ul {
+                display: flex;
+                li {
+                    margin-left: 45px;
+                    @include text(15px, 24px, 400, #324b72, "Inter");
+                }
+            }
+        }
+        .header__tool {
+            display: flex;
+            justify-content: space-between;
+            .header__text {
+                .header__title {
+                    margin-top: 125px;
+                    @include text(45px, 56px, 400, #112950, "Roboto");
+                    max-width: 360px;
+                }
+                .header__desc {
+                    margin-top: 42px;
+                    max-width: 430px;
+                    @extend %text;
+                }
+                & button {
+                    margin-top: 25px;
+                    background: #2e85ff;
+                    border-radius: 30px;
+                    padding: 18px 32px;
+                    @include text(15px, 24px, 400, #ffffff, "Inter");
+                }
+            }
+
+            .header__program {
+                .header__mobile img {
+                    margin-top: 90px;
+                    background: #ffffff;
+                    border: 1px solid #eaeef2;
+                    box-sizing: border-box;
+                    box-shadow: 0px 9px 50px rgba(17, 41, 80, 0.08);
+                    border-radius: 32px;
+                }
+
+                .header__desctop {
+                }
+            }
+        }
+    }
+}
+//---------------------benefits--------------------------------
+.benefits {
+    background-color: $background;
+    padding-top: 150px;
+    &__row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        @extend %blocksTitle37;
+        margin-bottom: 75px;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 120px;
+    }
+
+    &__item {
+    }
+}
+.item {
+    width: 300px;
+
+    &__icon {
+    }
+
+    &__subtitle {
+        @include text(22px, 27.6px, 400, rgba(17, 41, 80, 1), "Roboto");
+        margin: 27px 0 19px 0;
+    }
+
+    &__text {
+        @extend %text;
+    }
+}
+//---------------using--------------------------------------
+
+.using {
+    .using__row {
+        display: flex;
+        flex-direction: column;
+
+        .using__title {
+            @extend %blocksTitle36;
+            padding: 123px 0 30px 0;
+        }
+        .using__desc {
+            @extend %text;
+            margin-bottom: 56px;
+        }
+
+        .using__block {
+            display: flex;
+
+            .using__item {
+                min-width: 490px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                border: 1px solid #e0e6ed;
+                box-sizing: border-box;
+                border-radius: 16px;
+                margin-right: 21px;
+
+                .using__intoitem {
+                    padding: 53px 41px;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .using__img {
+                    background: $background;
+                    padding-top: 53px;
+                    text-align: center;
+                }
+                .using__subtitle {
+                    @include text(28px, 34.8px, 400, $titlecolor, "Roboto");
+                    margin: 46px 0 28px 0;
+                }
+                .using__text {
+                    @extend %text;
+                    flex: 0 1 auto;
+                }
+
+                .using__button {
+                    margin-top: 45px;
+                    a.using__button_black {
+                        background: #ffffff;
+                        padding: 18px 32px;
+                        border-radius: 30px;
+                        border: 1px solid #2e85ff;
+                        @include text(16px, 24px, 400, #2e85ff, "Inter");
+                    }
+                }
+            }
+
+            .using__intoitem_white {
+                display: flex;
+                flex-direction: column;
+                padding: 53px 41px;
+                padding-top: 0;
+                flex: 1 1 auto;
+            }
+
+            .using__item_black {
+                background: #112950;
+                border-radius: 16px;
+
+                .using__img_black {
+                    text-align: center;
+                }
+
+                .using__subtitle_black {
+                    @include text(28px, 34.8px, 400, #ffffff, "Roboto");
+                    margin: 46px 0 28px 0;
+                }
+                .using__text_black {
+                    @extend %text;
+                    color: #ffffff;
+                    margin-bottom: 77px;
+                    flex: 1 1 auto;
+                }
+                .using__Button_black {
+                    color: #ffffff;
+                    background: #2e85ff;
+                    padding: 18px 32px;
+                    border-radius: 30px;
+                    @include text(16px, 24px, 400, #ffffff, "Inter");
+                }
+                .using__Button_black_second {
+                    @include text(16px, 24px, 400, #ffffff, "Inter");
+                    margin-left: 28px;
+                    & img {
+                        position: relative;
+                        top: 6px;
+                        left: 5px;
+                    }
+                }
+            }
+        }
+
+        .using__item_down {
+            margin: 20px 0 128px 0;
+            padding: 48px 41px 53px 41px;
+            border: 1px solid #e0e6ed;
+            box-sizing: border-box;
+            border-radius: 16px;
+            width: 1000px;
+        }
+        .using__intoitem_down {
+            display: flex;
+            justify-content: space-between;
+            .using__img_down {
+                order: 1;
+                align-self: center;
+            }
+            .using__block_down {
+            }
+            .using__subtitle_down {
+                @include text(28px, 34.8px, 400, $titlecolor, "Roboto");
+            }
+            .using__text_down {
+                @extend %text;
+                margin: 28px 0;
+                max-width: 480px;
+            }
+            .using__button_down {
+                margin-top: 40px;
+                & a {
+                    background: #ffffff;
+                    padding: 18px 32px;
+                    border-radius: 30px;
+                    border: 1px solid #2e85ff;
+                    @include text(16px, 24px, 400, #2e85ff, "Inter");
+                }
+            }
+        }
+    }
+}
+///----------------------------------------------companies--------------------------------------
+
+.companies {
+    background-color: $background;
+    padding: 125px;
+}
+
+.companies__row {
+    display: flex;
+    flex-direction: column;
+
+    .companies__title {
+        margin-bottom: 68px;
+        @extend %blocksTitle37;
+    }
+    .companies__recommendation {
+        display: flex;
+        justify-content: space-between;
+        .companies__block {
+            display: flex;
+            margin-bottom: 125px;
+            .companies__img {
+                margin-right: 40px;
+            }
+            .companies__text {
+                flex: 1 0 50%;
+                width: 320px;
+                .companies__subtitle {
+                    @include text(23px, 28px, 400, $titlecolor, "Roboto");
+                    margin-bottom: 26px;
+                }
+                .companies__desk {
+                    @include text(17px, 27px, 400, $textcolor, "Inter");
+                }
+            }
+        }
+    }
+
+    .copanies__joined {
+        @include text(14px, 17px, 400, #7b8ba5, "Inter");
+        margin-bottom: 55px;
+    }
+
+    .companies__icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .companies__item {
+            flex: 0 0 25%;
+            margin-bottom: 40px;
+            align-self: flex-end;
+        }
+    }
+}
+//----------------------------lang------------------------------------------
+
+.lang {
+}
+
+.lang__row {
+    .lang__title {
+        @extend %blocksTitle37;
+        padding: 123px 0 30px 0;
+    }
+    .lang__text {
+        @extend %text;
+        max-width: 630px;
+        margin-bottom: 56px;
+    }
+    .lang__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 72px;
+        .lang__column {
+            display: flex;
+            flex-direction: column;
+
+            a.lang__language {
+                @include text(15px, 24px, 400, $textcolor, "Inter");
+                padding: 4px 16px 4px 36px;
+                border: 1px solid #e0e6ed;
+                border-radius: 16px;
+                margin-bottom: 8px;
+                align-self: flex-start;
+            }
+        }
+    }
+
+    .lang__translate {
+        display: flex;
+        padding: 42px 97px;
+        border: 1px solid #e0e6ed;
+        box-sizing: border-box;
+        border-radius: 16px;
+        align-items: baseline;
+        margin-bottom: 128px;
+        .contribute {
+            text-transform: uppercase;
+            @include text(14px, 21px, 400, #ffffff, "Inter");
+            padding: 5px 16px;
+            background: #112950;
+            border-radius: 16px;
+        }
+        .lang__label {
+            @extend %text;
+            margin-left: 16px;
+            .lang__let {
+                color: #2174ea;
+            }
+        }
+    }
+}
+//--------------------------feedback------------------------------------
+.feedback {
+    background-color: $background;
+    padding-bottom: 130px;
+}
+
+.feedback__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.feedback__title {
+    @extend %blocksTitle37;
+    padding: 123px 0 30px 0;
+    text-align: center;
+}
+.feedback__text {
+    text-align: center;
+    @extend %text;
+    margin-bottom: 42px;
+    width: 490px;
+}
+.feedback__button {
+    @include text(15px, 24px, 400, #2174ea, "Inter");
+    padding: 19px 33px;
+    align-self: center;
+    border: 1px solid #2e85ff;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+//-----------------------------footer--------------------------------
+.footer {
+    background-color: $background;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+}
+.footer__block {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 75px;
+    border-bottom: 1px solid #E0E6ED;
+    .footer__list {
+        display: flex;
+        .footer__column {
+            display: flex;
+            flex-direction: column;
+            margin-right: 80px;
+            .footer__subtitle {
+                margin-bottom: 28px;
+                @include text(14px, 21px, 400, #7b8ba5, "Inter");
+            }
+            .footer__item {
+                margin-bottom: 16px;
+                @include text(15px, 24px, 400, $textcolor, "Inter");
+            }
+        }
+    }
+    .footer__network {
+
+        .footer__icon {
+        }
+    }
+}
+
+.footer__inter {
+    padding: 40px 0;
+    @include text(15px,24px ,400 ,#7B8BA5 ,'Inter' );
+}
