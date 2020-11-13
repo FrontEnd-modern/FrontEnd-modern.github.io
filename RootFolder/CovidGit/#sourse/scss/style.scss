@@ -256,132 +256,46 @@ $titlecolor: #112950;
             margin-bottom: 56px;
         }
 
-        .using__block {
-            display: flex;
+     .using__block{
+         display: flex;
 
-            .using__item {
-                min-width: 490px;
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                border: 1px solid #e0e6ed;
-                box-sizing: border-box;
-                border-radius: 16px;
-                margin-right: 21px;
+       
 
-                .using__intoitem {
-                    padding: 53px 41px;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .using__img {
-                    background: $background;
-                    padding-top: 53px;
-                    text-align: center;
-                }
-                .using__subtitle {
-                    @include text(28px, 34.8px, 400, $titlecolor, "Roboto");
-                    margin: 46px 0 28px 0;
-                }
-                .using__text {
-                    @extend %text;
-                    flex: 0 1 auto;
-                }
-
-                .using__button {
-                    margin-top: 45px;
-                    a.using__button_black {
-                        background: #ffffff;
-                        padding: 18px 32px;
-                        border-radius: 30px;
-                        border: 1px solid #2e85ff;
-                        @include text(16px, 24px, 400, #2e85ff, "Inter");
-                    }
-                }
-            }
-
-            .using__intoitem_white {
+         .using__item{
+            border-radius: 16px;
+            .using__in-item{
                 display: flex;
                 flex-direction: column;
                 padding: 53px 41px;
-                padding-top: 0;
-                flex: 1 1 auto;
-            }
-
-            .using__item_black {
-                background: #112950;
-                border-radius: 16px;
-
-                .using__img_black {
-                    text-align: center;
+                .using__subtitle{
+                    @include text(28px,35px ,400 ,#112950 ,'Roboto' );
+                    margin: 48px 0 28px 0;
                 }
-
-                .using__subtitle_black {
-                    @include text(28px, 34.8px, 400, #ffffff, "Roboto");
-                    margin: 46px 0 28px 0;
-                }
-                .using__text_black {
+                .using__text{
                     @extend %text;
-                    color: #ffffff;
-                    margin-bottom: 77px;
+                    margin-bottom: 27px;
                     flex: 1 1 auto;
                 }
-                .using__Button_black {
-                    color: #ffffff;
-                    background: #2e85ff;
-                    padding: 18px 32px;
-                    border-radius: 30px;
-                    @include text(16px, 24px, 400, #ffffff, "Inter");
-                }
-                .using__Button_black_second {
-                    @include text(16px, 24px, 400, #ffffff, "Inter");
-                    margin-left: 28px;
-                    & img {
-                        position: relative;
-                        top: 6px;
-                        left: 5px;
-                    }
+                .using__buttons{
+                    display: flex;
+                    
+                    
                 }
             }
-        }
 
-        .using__item_down {
-            margin: 20px 0 128px 0;
-            padding: 48px 41px 53px 41px;
-            border: 1px solid #e0e6ed;
-            box-sizing: border-box;
-            border-radius: 16px;
-            width: 1000px;
-        }
-        .using__intoitem_down {
-            display: flex;
-            justify-content: space-between;
-            .using__img_down {
-                order: 1;
-                align-self: center;
+         }
+         .using__item_first{
+            background-color: #112950;
+            color: #ffffff;
+            .using__text{
+                color: #ffffff !important;
             }
-            .using__block_down {
-            }
-            .using__subtitle_down {
-                @include text(28px, 34.8px, 400, $titlecolor, "Roboto");
-            }
-            .using__text_down {
-                @extend %text;
-                margin: 28px 0;
-                max-width: 480px;
-            }
-            .using__button_down {
-                margin-top: 40px;
-                & a {
-                    background: #ffffff;
-                    padding: 18px 32px;
-                    border-radius: 30px;
-                    border: 1px solid #2e85ff;
-                    @include text(16px, 24px, 400, #2e85ff, "Inter");
-                }
+        .using__subtitle_first{
+                color: #ffffff !important;
             }
         }
+        
+     }
     }
 }
 ///----------------------------------------------companies--------------------------------------
